@@ -1,4 +1,6 @@
 # Command
+[![GitHub version](https://badge.fury.io/gh/SleeplessByte%2Fcommand.svg)](https://badge.fury.io/gh/SleeplessByte%2command) 
+[![Build Status: master](https://travis-ci.com/SleeplessByte/command.svg?token=FpDLv4Yva15pzqYpq9Hk&branch=master)](https://travis-ci.com/SleeplessByte/command)
 
 Command adds the [Command Design Pattern](https://sourcemaking.com/design_patterns/command) to any `Class`. 
 
