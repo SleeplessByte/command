@@ -1,6 +1,7 @@
 # Command
+[![Build Status: master](https://travis-ci.com/SleeplessByte/command.svg?branch=master)](https://travis-ci.com/SleeplessByte/command)
 [![GitHub version](https://badge.fury.io/gh/SleeplessByte%2Fcommand.svg)](https://badge.fury.io/gh/SleeplessByte%2command) 
-[![Build Status: master](https://travis-ci.com/SleeplessByte/command.svg?token=FpDLv4Yva15pzqYpq9Hk&branch=master)](https://travis-ci.com/SleeplessByte/command)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 Command adds the [Command Design Pattern](https://sourcemaking.com/design_patterns/command) to any `Class`. 
 
