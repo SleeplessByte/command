@@ -6,6 +6,8 @@ This was based on `Hanami::Interactor`, and started off as adding a direct `call
 was added to Hanami's. After working with different interactors and command-style gems, including ways to organize
 units for execution and without depending on other utility classes, `command` was born.
 
+**Looking for a good name**: `command` is already taken on rubygems...,  so whatevs.
+
 ## Installation
 
 Add this line to your application's Gemfile:
