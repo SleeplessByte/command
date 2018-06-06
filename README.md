@@ -60,6 +60,19 @@ result.successful? # => false
 result.fetched # => nil
 ```
 
+## Testing
+
+There are some `Minitest` assertions included in this library.
+
+```Ruby
+require 'command/minitest'
+```
+| Assert | Refute | |
+|:---:|:---:|:---:|
+| `assert_successful(command_result)` | `refute_successful` | passes if the command is successful?
+| `assert_valid(command, *args_for_valid)` | `refute_valid` | passes if the command is valid
+| `assert_with_error(expected, actual)` | `refute_with_error` | passes if the command has a certain error message
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. 
