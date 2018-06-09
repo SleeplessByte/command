@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 require_relative '../test_helper'
 
-module Command
+module Commande
   class ErrorsTest < Minitest::Test
 
-    class CommandWithLog
-      include Command
+    class CommandeWithLog
+      include Commande
 
       def call
         log 'message'
       end
     end
 
-    class CommandWithLogAndError
-      include Command
+    class CommandeWithLogAndError
+      include Commande
 
       def call
         log 'message'
@@ -21,15 +23,15 @@ module Command
     end
 
     def test_result_success_is_unchanged
-      result = CommandWithLog.call
+      result = CommandeWithLog.call
       assert_successful result
 
-      result = CommandWithError.call
+      result = CommandeWithError.call
       refute_successful result
     end
 
     def test_result_has_has_log
-      result = CommandWithLog.call
+      result = CommandeWithLog.call
       assert_equal 'message', result.logs.first
     end
   end

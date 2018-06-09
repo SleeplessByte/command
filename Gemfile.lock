@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    command (0.2.1)
+    commande (0.2.1)
 
 GEM
   remote: https://rubygems.org/
@@ -22,7 +22,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  command!
+  commande!
   minitest (~> 5.0)
   rake (~> 10.0)
   simplecov

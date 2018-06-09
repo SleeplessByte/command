@@ -1,19 +1,3 @@
-module Minitest
-  module Assertions
-    def assert_successful(actual)
-      assert successful?(actual),
-             "Expected #{actual.inspect} to be successful?. Actual got these errors: #{actual.errors || ''}"
-    end
+# frozen_string_literal: true
 
-    def refute_successful(actual)
-      refute successful?(actual),
-             "Expected #{actual.inspect} to not be successful?"
-    end
-
-    private
-
-    def successful?(actual)
-      actual.successful?
-    end
-  end
-end
+require 'commande/minitest/assertions/assert_successful'

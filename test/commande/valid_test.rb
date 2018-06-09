@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require_relative '../test_helper'
 
-module Command
+module Commande
   class ValidTest < Minitest::Test
 
-    class ValidatableCommand
-      include Command
+    class ValidatableCommande
+      include Commande
 
       output :foo
 
@@ -23,21 +25,21 @@ module Command
     end
 
     def test_result_matches_validation
-      result = ValidatableCommand.call(true)
+      result = ValidatableCommande.call(true)
       assert_successful result
 
-      result = ValidatableCommand.call(false)
+      result = ValidatableCommande.call(false)
       refute_successful result
     end
 
     def test_call_if_valid
-      result = ValidatableCommand.call(true)
+      result = ValidatableCommande.call(true)
       assert_respond_to result, :foo
       assert_equal 'foo', result.foo
     end
 
     def test_dont_call_if_not_valid
-      result = ValidatableCommand.call(false)
+      result = ValidatableCommande.call(false)
       assert_respond_to result, :foo
       assert_nil result.foo
     end
