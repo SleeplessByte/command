@@ -2,6 +2,7 @@
 [![Build Status: master](https://travis-ci.com/SleeplessByte/command.svg?branch=master)](https://travis-ci.com/SleeplessByte/command)
 [![Gem Version](https://badge.fury.io/rb/commande.svg)](https://badge.fury.io/rb/commande)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Maintainability](https://api.codeclimate.com/v1/badges/070b90f32c99865db49f/maintainability)](https://codeclimate.com/github/SleeplessByte/command/maintainability)
 
 Command adds the [Command Design Pattern](https://sourcemaking.com/design_patterns/command) to any `Class`. 
 
