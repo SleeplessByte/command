@@ -434,5 +434,7 @@ module Commande
         outputs[name.to_sym] = "@#{name}"
       end
     end
+
+    alias outputs output
   end
 end
