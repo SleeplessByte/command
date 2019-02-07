@@ -360,7 +360,7 @@ module Commande
     source.valid? && source.persisted?
   end
 
-  def transfer_errors(source, header:)
+  def transfer_errors(source, header: nil)
     errors = source.errors
     errors = source.errors.full_messages if errors.respond_to?(:full_messages)
     Array(errors).each do |e|

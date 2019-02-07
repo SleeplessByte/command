@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0
+- Add `Chain` for command chaining
+
 ## 0.3.1
 - Alias `output` as `outputs`
 

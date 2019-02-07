@@ -78,6 +78,61 @@ result.successful? # => false
 result.fetched # => nil
 ```
 
+### Chaining
+
+If you opt-in to chaining `require 'commande/chain'`, you can create a call chain that chains multiple `Commande`. The
+only limitation is that you can _only_ use named arguments. This is to ensure breakage on unexpected output, name
+mismatches and collisions.
+
+```ruby
+require 'command'
+require 'command/chain'
+
+class StartCommand
+  include Commande
+
+  output :foo, :baz
+
+  def valid?(test:)
+    error! 'test must at least be 3' if test < 3
+
+    true
+  end
+
+  def call(test:)
+    self.foo = 'foo' * test
+    self.not_an_output = 'not_an_output'
+  end
+
+  private
+
+  attr_accessor :foo, :baz, :not_an_output
+end
+
+class SecondCommand
+  include Commande
+
+  output :result
+
+  def call(foo:, **_opts)
+    self.result = foo
+  end
+
+  private
+
+  attr_accessor :result
+end
+
+chained = Chain.new(StartCommand, SecondCommand).call(test: 3)
+# => result is successful, and output matches `SecondCommand`
+chained.chain_result.result
+# => 'foofoofoo'
+
+boomed = Chain.new(StartCommand, SecondCommand).call(test: 2) 
+# => boomed has failed, and output matches nil
+boomed.error
+# => 'test must at least be 3'
+```
 ## Testing
 
 There are some `Minitest` assertions included in this library.
