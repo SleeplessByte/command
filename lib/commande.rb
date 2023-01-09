@@ -213,18 +213,18 @@ module Commande
     #   result.buyer    # => #<Buyer email: john@smith.com>
     #   result.foo      # => raises NoMethodError
     #
-    def call(*args, &block)
+    def call(*args, **kwargs, &block)
       @__result = ::Commande::Result.new
-      _call(*args) { super(*args, &block) }
+      _call(*args, **kwargs) { super(*args, **kwargs, &block) }
     end
 
     private
 
     # @api private
-    def _call(*args)
+    def _call(*args, **kwargs)
       catch :end do
         catch :fail do
-          validate!(*args)
+          validate!(*args, **kwargs)
           yield
         end
       end
@@ -233,8 +233,8 @@ module Commande
     end
 
     # @since 1.1.0
-    def validate!(*args)
-      fail! unless valid?(*args)
+    def validate!(*args, **kwargs)
+      fail! unless valid?(*args, **kwargs)
     end
   end
 
@@ -247,7 +247,7 @@ module Commande
   #
   # @return [TrueClass,FalseClass] the result of the check
   #
-  def valid?(*)
+  def valid?(*_, **__)
     true
   end
 
@@ -400,8 +400,8 @@ module Commande
 
   # @api private
   module ClassMethods
-    def call(*args, &block)
-      new.call(*args, &block)
+    def call(*args, **kwargs, &block)
+      new.call(*args, **kwargs, &block)
     end
 
     # @api private

@@ -37,7 +37,7 @@ module Commande
     attr_accessor :commands, :chain_result
 
     class InitialCommandResult
-      def initialize(**args)
+      def initialize(args)
         self.payload = args
       end
 
